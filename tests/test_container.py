@@ -18,6 +18,18 @@ class ContainerTest(unittest.TestCase):
 
         self.assertIsInstance(self.container.resolve(Foo), Foo)
 
+    def test_resolve_class(self):
 
+        class Bar(object):
+            pass
+
+        class Foo(object):
+
+            @hint(Bar)
+            def __init__(self, bar):
+                self.bar = bar
+
+        foo = self.container.resolve(Foo)
+        self.assertIsInstance(foo.bar, Bar)
 
 

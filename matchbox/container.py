@@ -9,5 +9,4 @@ class Container(object):
         """Receives a class for which the appropriate dependencies are resolves
         which are injected in the instance and returned to the caller.
         """
-
         return className()

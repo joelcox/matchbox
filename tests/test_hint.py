@@ -48,4 +48,3 @@ class HintTest(unittest.TestCase):
             return True
 
         self.assertTrue(func(1))
-
