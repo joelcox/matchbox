@@ -13,37 +13,28 @@ class ContainerTest(unittest.TestCase):
         """Checks the initialisation of a simple class without dependencies
         """
 
-        class Foo(object):
-            pass
-
         self.assertIsInstance(self.container.resolve(Foo), Foo)
 
     def test_resolve_class(self):
 
-        class Bar(object):
-            pass
-
         class Foo(object):
-
-            @hint(Bar)
             def __init__(self, bar):
                 self.bar = bar
 
+        self.container.map(Foo, [Bar])
         foo = self.container.resolve(Foo)
         self.assertIsInstance(foo.bar, Bar)
 
     def test_map_class(self):
-
-        class Bar(object):
-            pass
-
-        class Foo(object):
-            pass
-
-        class Spam(object):
-            pass
-
         self.container.map(Bar, [Foo, Spam])
-        self.self.assertEquals(self.container._dependency_map[Bar], [Foo, Spam])
+        self.assertEquals(self.container._dependency_map[Bar], [Foo, Spam])
 
 
+class Bar(object):
+    pass
+
+class Foo(object):
+    pass
+
+class Spam(object):
+    pass
