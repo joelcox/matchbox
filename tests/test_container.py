@@ -32,4 +32,18 @@ class ContainerTest(unittest.TestCase):
         foo = self.container.resolve(Foo)
         self.assertIsInstance(foo.bar, Bar)
 
+    def test_map_class(self):
+
+        class Bar(object):
+            pass
+
+        class Foo(object):
+            pass
+
+        class Spam(object):
+            pass
+
+        self.container.map(Bar, [Foo, Spam])
+        self.self.assertEquals(self.container._dependency_map[Bar], [Foo, Spam])
+
 
