@@ -7,7 +7,8 @@ def hint(*types):
 
             # Check whether the length of arguments matches the length of types
             if len(args) is not len(types):
-                raise TypeError('%s hint decorator expects %s types (%s given)' % (f.__name__, len(args), len(types)))
+                raise TypeError('%s hint decorator expects %s types (%s \
+                                given)' % (f.__name__, len(args), len(types)))
 
             # Get all the types of the passed arguments
             arg_types = tuple(map(type, args))
@@ -18,7 +19,8 @@ def hint(*types):
             for index, arg in enumerate(zip(arg_types, types)):
 
                 if arg[1] is not None and arg[0] is not arg[1]:
-                    raise TypeError('Argument %s should be %s (got %s)' % (index + 1, arg[1], arg[0]))
+                    raise TypeError('Argument %s should be %s (got %s)' %
+                                    (index + 1, arg[1], arg[0]))
 
             return f(*args)
 

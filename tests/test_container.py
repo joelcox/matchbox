@@ -37,13 +37,16 @@ class ContainerTest(unittest.TestCase):
         self.container.map(Bar, [Foo, Spam])
         self.assertEquals(self.container._dependency_map[Bar], [Foo, Spam])
 
+
 class Foo(object):
     def __init__(self, bar=None):
         self.bar = bar
 
+
 class Bar(object):
     def __init__(self, spam=None):
         self.spam = spam
+
 
 class Spam(object):
     pass

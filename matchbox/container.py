@@ -31,4 +31,3 @@ class Container(object):
         """Maps the dependencies to a class.
         """
         self._dependency_map[class_name] = dependencies
-
