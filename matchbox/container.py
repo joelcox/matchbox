@@ -2,10 +2,11 @@
 
 class Container(object):
     """Inversion of control container that injects dependencies through
-    typehints.
+    typehints or explicit mapping.
     """
 
-    _dependency_map = {}
+    def __init__(self):
+        self._dependency_map = {}
 
     def resolve(self, class_name):
         """Receives a class for which the appropriate dependencies are resolves
@@ -15,7 +16,7 @@ class Container(object):
         dependencies = self._dependency_map.get(class_name)
 
         # Return an instance of the class if there are no dependencies at all
-        if (dependencies is None):
+        if dependencies is None:
             return class_name()
 
         resolved_dependencies = []

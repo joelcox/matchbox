@@ -18,7 +18,7 @@ def hint(*types):
             for index, arg in enumerate(zip(arg_types, types)):
 
                 if arg[1] is not None and arg[0] is not arg[1]:
-                    raise TypeError('Argument at position %s should be of type %s (actual type %s)' % (index + 1, arg[1], arg[0]))
+                    raise TypeError('Argument %s should be %s (got %s)' % (index + 1, arg[1], arg[0]))
 
             return f(*args)
 
