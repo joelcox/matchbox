@@ -1,5 +1,6 @@
 import unittest
 
+
 class TestCase(unittest.TestCase):
     """Implements the assertIsInstance method not found in Python 2.6
     """
