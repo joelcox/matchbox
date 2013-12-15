@@ -1,9 +1,9 @@
+from utils import TestCase
+
 from matchbox import hint
 
-import unittest
 
-
-class HintTest(unittest.TestCase):
+class HintTest(TestCase):
 
     def test_argument_length(self):
         """Checks if the amount of hints equals the amount of args on the

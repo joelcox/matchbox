@@ -1,9 +1,9 @@
-import unittest
+from utils import TestCase
 
 from matchbox.container import Container
 
 
-class ContainerTest(unittest.TestCase):
+class ContainerTest(TestCase):
 
     def setUp(self):
         self.container = Container()

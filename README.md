@@ -1,6 +1,8 @@
 Matchbox
 ========
 
+[![Build Status](https://travis-ci.org/joelcox/matchbox.png?branch=master)](https://travis-ci.org/joelcox/matchbox)
+
 Experimental Python tools.
 
 Type hinting
