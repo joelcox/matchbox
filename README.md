@@ -32,7 +32,7 @@ Inversion of control
 
 Rather than importing your dependencies locally, you are probably better off
 injecting dependencies into your objects. Doing this manually is a real
-hassle, so let the DI container do the heavy lifter for you!
+hassle, so let the DI container do the heavy lifting for you!
 
 ```python
 >>> from matchbox import hint
